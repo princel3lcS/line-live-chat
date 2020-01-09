@@ -42,16 +42,16 @@
 </template>
 
 <script>
-  export default {
-    name: 'app',
-    props: {
-      source: String,
-    },
-    data: () => ({
-      drawer: null,
-    }),
-    created () {
-      this.$vuetify.theme.dark = true
-    },
-  }
+export default {
+  name: 'app',
+  props: {
+    source: String,
+  },
+  data: () => ({
+    drawer: null,
+  }),
+  created () {
+    this.$vuetify.theme.dark = true
+  },
+}
 </script>
