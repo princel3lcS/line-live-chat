@@ -1,7 +1,6 @@
 <template>
   <div class="home">
-    {{ users }}
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <HelloWorld />
   </div>
 </template>
 
