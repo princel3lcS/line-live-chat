@@ -1,12 +1,12 @@
 <template>
   <div class="home">
-    <HelloWorld />
+    <ChatInboxDisplay v-for="(user, index) in users" :key="index" :name="user.informations.name" />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import ChatInboxDisplay from '@/components/ChatInboxDisplay.vue'
 import { db } from '../config/db'
 
 
@@ -19,7 +19,7 @@ export default {
     users: db.ref('users')
   },
   components: {
-    HelloWorld
+    ChatInboxDisplay
   }
 }
 </script>
