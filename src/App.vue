@@ -29,8 +29,19 @@
       app
       clipped-left
     >
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-toolbar-title>Application</v-toolbar-title>
+      <v-app-bar-nav-icon large @click.stop="drawer = !drawer" />
+      <v-container fluid>
+        <div class="eiei">
+          <v-overflow-btn
+            :items="filterChat"
+            label="Filter Chat"
+          ></v-overflow-btn>
+        </div>
+      </v-container>
+      <v-btn icon>
+        <v-icon large>settings_applications</v-icon>
+      </v-btn>
+
     </v-app-bar>
 
     <v-content>
@@ -49,9 +60,21 @@ export default {
   },
   data: () => ({
     drawer: null,
+    filterChat: [
+      { text: 'All' },
+      { text: 'Inbox' },
+      { text: 'Unread' }
+    ]
   }),
   created () {
     this.$vuetify.theme.dark = true
   },
 }
 </script>
+
+<style>
+.eiei {
+  padding-top: 2.3vh;
+  width: 10wh;
+}
+</style>
