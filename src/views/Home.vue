@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <ChatInboxDisplay v-for="(user, index) in users" :key="index" :name="user.informations.name" />
+    <ChatInboxDisplay v-for="(user, index) in users" :key="index" :userProfile="user.userProfile" />
   </div>
 </template>
 
