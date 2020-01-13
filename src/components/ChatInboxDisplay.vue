@@ -1,28 +1,30 @@
 <template>
   <v-container
-    class="fill-height chat-inbox-display"
     fluid
   >
-    <v-row>
+    <v-row no-gutters justify="space-between">
       <v-col>
         <v-img
-          width="100"
-          src="../assets/hqdefault.jpg"
-        >
-        </v-img> 
+          class="img-profile"
+          width="80"
+          aspect-ratio="1"
+          :src="userProfile.pictureUrl"
+        />
       </v-col>
       <v-col>
-        <v-row>
-          <v-col>{{name}}</v-col>
-        </v-row>
-        <v-row>
-          <v-col>Last message</v-col>
-        </v-row>
+        <div class="d-flex flex-column justify-space-between">
+          <div class="name">
+            {{userProfile.displayName}}
+          </div>
+          <div class="last-message">
+            last message
+          </div>
+        </div>
       </v-col>
       <v-col>
-        <v-row >
-          <v-col>yesterday</v-col>
-        </v-row>
+        <div class="last-talk">
+          11.28 น.
+        </div>
       </v-col>
     </v-row>
   </v-container>
@@ -32,13 +34,21 @@
 export default {
   name: 'ChatInboxDisplay',
   props: {
-    name: String
+    userProfile: Object
   }
 };
 </script>
 
 <style scoped>
-.chat-inbox-display {
-  border: 2px solid red;
+.img-profile {
+  border-radius: 100vw;
+}
+.name, .last-message {
+  padding-left: 3vw;
+}
+.last-message, .last-talk {
+  opacity: 0.4;
+  font-size: 90%;
+  text-align: start;
 }
 </style>
