@@ -1,5 +1,6 @@
 <template>
   <v-container
+    class="fill-height chat-inbox-display"
     fluid
   >
     <v-row no-gutters justify="space-between">
@@ -40,6 +41,10 @@ export default {
 </script>
 
 <style scoped>
+.chat-inbox-display {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.164);
+  
+}
 .img-profile {
   border-radius: 100vw;
 }

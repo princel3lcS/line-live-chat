@@ -16,7 +16,7 @@ export default {
     users: []
   }),
   firebase:{
-    users: db.ref('users')
+    users: db.ref('users').orderByChild('responseMode').equalTo('LIVE_CHAT')
   },
   components: {
     ChatInboxDisplay
